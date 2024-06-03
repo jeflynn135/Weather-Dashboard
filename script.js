@@ -85,6 +85,7 @@ function getCity(lat, lon){
         return response.json()
     }) .then(function(data){
         console.log(data)
+
         document.querySelector(".city-name-1").textContent=data.name
         document.querySelector(".temp-current-1").textContent=`Current Temp: ${data.main.temp}°F`
         document.querySelector(".temp-max-1").textContent=`High Temp: ${data.main.temp_max}°F`
@@ -188,12 +189,39 @@ function getGeocode(city, state){
         return response.json()
     }) .then(function(data){
         console.log(data)
+        let search = JSON.parse(localStorage.getItem("Previous-Searches")) || []
+    if (!search.includes(`${data[0].name}, ${data[0].state}`)) {
+        search.push(`${data[0].name}, ${data[0].state}`)
+        localStorage.setItem("Previous-Searches", JSON.stringify(search))
+    }
         const lat = data[0].lat
         const lon = data[0].lon
         getCity(lat, lon)
         getForcast(lat,lon)
     })
 }
+// Function to update history in local storage then updates displayed history.
+function appendToHistory(search) {
+  // If there is no search term return the function
+  if (searchHistory.indexOf(search) !== -1) {
+    return;
+  }
+  searchHistory.push(search);
+
+  localStorage.setItem('search-history', JSON.stringify(searchHistory));
+  renderSearchHistory();
+}
+function storageButton(){
+    let search = JSON.parse(localStorage.getItem("Previous-Searches")) || []
+    for(let i = 0; i < search.length; i++){
+let btn = document.createElement("button")
+btn.textContent = search[i]
+// add on click to btn
+btn.onclick = appendToHistory(search)
+}
+document.querySelector(".search-history").append(btn)
+    }
+
 $("#btnGet").on("click", function(){
     let city = $("#city").val()
     let state = $("#state").val()

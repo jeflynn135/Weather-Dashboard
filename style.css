@@ -1,39 +1,45 @@
 .container {
-    border: solid 1px;
-    border-radius: 10px 10px 10px 10px;
+  border: solid 1px;
+  border-radius: 10px 10px 10px 10px;
 }
-.row {
-    display:flex;
-    flex-direction: row;
 
+.row {
+  display: flex;
+  flex-direction: row;
 }
+
 .box-1 {
-    border: solid 1px;
-    border-radius: 10px 10px 10px 10px;
-    max-width: 600px;
+  border: solid 1px;
+  border-radius: 10px 10px 10px 10px;
+  max-width: 600px;
 }
+
 .box-2 {
-    border: solid 1px;
-    border-radius: 10px 10px 10px 10px;
-    max-width: 300px;
+  border: solid 1px;
+  border-radius: 10px 10px 10px 10px;
+  max-width: 300px;
 }
+
 .box-3 {
-    border: solid 1px;
-    border-radius: 10px 10px 10px 10px;
-    max-width: 300px;
+  border: solid 1px;
+  border-radius: 10px 10px 10px 10px;
+  max-width: 300px;
 }
+
 .box-4 {
-    border: solid 1px;
-    border-radius: 10px 10px 10px 10px;
-    max-width: 300px;
+  border: solid 1px;
+  border-radius: 10px 10px 10px 10px;
+  max-width: 300px;
 }
+
 .box-5 {
-    border: solid 1px;
-    border-radius: 10px 10px 10px 10px;
-    max-width: 300px;
+  border: solid 1px;
+  border-radius: 10px 10px 10px 10px;
+  max-width: 300px;
 }
+
 .box-6 {
-    border: solid 1px;
-    border-radius: 10px 10px 10px 10px;
-    max-width: 300px;
+  border: solid 1px;
+  border-radius: 10px 10px 10px 10px;
+  max-width: 300px;
 }
